@@ -1,0 +1,4 @@
+Please write SQL code in order to pull the following output: 
+State and Email of Members with Enquiries 
+Calculating how many members have more than 1 Private enquiry and live in NSW
+Calculating number of Enquiries per state

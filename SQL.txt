@@ -1,0 +1,23 @@
+SELECT distinct(a.Member_id), a.Email, a.State
+FROM ContactTable a
+INNER JOIN EnquiryTable b
+ON a.Member_id=b.Member_id
+------------------------------------------
+select count(*) from (SELECT a.Member_id,b.State,count(a.Member_id) AS NuEnqNSWoneplus
+FROM EnquiryTable a
+INNER JOIN ContactTable b
+ON a.Member_id=b.Member_id
+where a.Type = 'Private'
+GROUP BY a.Member_id,b.State) agg
+where agg.NuEnqNSWoneplus > 1 and agg.State = 'NSW'
+-------------------------------------------
+
+SELECT b.State, count(a.Type) AS NuEnqState
+FROM EnquiryTable a
+INNER JOIN ContactTable b
+ON a.Member_id=b.Member_id
+GROUP BY b.State
+
+
+
+
